@@ -32,9 +32,10 @@ The selected assembly's moment claim at the frontier κ. No new κ.
 Method; explicit parameter ranges/candidate alphabet:
 Successive integer square roots (128 steps, 160 bits) and the dyadic bits of
 `a`. Complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
-`check_moment.py`. It is not determined by `ASSEMBLY.json`. It is taken from
-the selected record `certificates/selected-result.json`, consistent with
-`research/selected-suppliers-de-diagnostic`. One centre rank-64 unit per call.
+`check_moment.py`. It is not determined by `ASSEMBLY.json`. No selected-record
+file encodes that width. The same value is stated in
+`research/selected-suppliers-de-diagnostic/README.md` line 24
+(`m = 73`, `W = 14,336`). One centre rank-64 unit per call.
 `W` and `n_r` come from `ASSEMBLY.json`:
 `W = (Σ r n_r - 64 N) / 72` with `N = provider_counts.gauge44`.
 Bit `m`, `W` and the deficit are parsed from `bit_supplier`.

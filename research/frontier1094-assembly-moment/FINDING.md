@@ -27,10 +27,10 @@ use integers and `fractions.Fraction` only.
 
 The complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
 `research/frontier1094-assembly-moment/check_moment.py`. It is not determined
-by `ASSEMBLY.json`. It is taken from the selected record
-`certificates/selected-result.json`, consistent with
-`research/selected-suppliers-de-diagnostic`. All other complex profile data
-(`W`, `n_r`) comes from `ASSEMBLY.json`.
+by `ASSEMBLY.json`. No selected-record file encodes that width. The same
+value is stated in `research/selected-suppliers-de-diagnostic/README.md`
+line 24 (`m = 73`, `W = 14,336`). All other complex profile data (`W`, `n_r`)
+comes from `ASSEMBLY.json`.
 
 The exponent is `a = κ/(1−κ)` with
 `κ = 836330098538459/500000000000000000`, so

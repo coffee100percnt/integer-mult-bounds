@@ -2,8 +2,9 @@
 """Integer-root check of the selected frontier1094 moment.
 
 Complex width m = 73 is the hardcoded COMPLEX_WIDTH. It is not determined by
-ASSEMBLY.json. It is taken from certificates/selected-result.json, consistent
-with research/selected-suppliers-de-diagnostic. W and n_r come from
+ASSEMBLY.json. No selected-record file encodes that width. The same value is
+stated in research/selected-suppliers-de-diagnostic/README.md line 24
+(m = 73, W = 14,336). W and n_r come from
 research/community-frontier1094-audit/ASSEMBLY.json.
 The checker imports nothing from this repository. Acceptance comparisons use
 integers and fractions only.

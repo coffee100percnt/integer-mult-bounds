@@ -10,11 +10,9 @@ Task card: [TASK-CARD.md](TASK-CARD.md). Metadata: [TASK.json](TASK.json).
 
 The complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
 [`check_moment.py`](check_moment.py). It is not determined by `ASSEMBLY.json`.
-It is taken from the selected record
-[`certificates/selected-result.json`](../../certificates/selected-result.json),
-consistent with
-[`research/selected-suppliers-de-diagnostic`](../selected-suppliers-de-diagnostic).
-All other complex profile data (`W`, `n_r`) comes from
+No selected-record file encodes that width. The same value is stated in
+[`research/selected-suppliers-de-diagnostic/README.md`](../selected-suppliers-de-diagnostic/README.md)
+line 24 (`m = 73`, `W = 14,336`). All other complex profile data (`W`, `n_r`) comes from
 [`research/community-frontier1094-audit/ASSEMBLY.json`](../community-frontier1094-audit/ASSEMBLY.json).
 
 | Pin | Value |
