@@ -41,15 +41,15 @@
     ]
   },
   "scope_status": "refined",
-  "actual_scope": "Independently enclose the selected frontier1094 moment at a = kappa/(1-kappa) for the paid profile recomputed from research/community-frontier1094-audit/ASSEMBLY.json alone. kappa is 836330098538459/500000000000000000. The enclosure is successive integer square roots. Domain: that assembly only. No new kappa.",
-  "scope_change_reason": "The card's enclosure method is unchanged. The refinement names the selected assembly, the exponent a = kappa/(1-kappa), and integer-root bounds. The complex histogram is in the assembly. The bit histogram is not, so the bit moment stays an open obligation of this sole-input domain.",
+  "actual_scope": "Independently enclose the selected frontier1094 moment at a = kappa/(1-kappa). Complex width m = 73 is hardcoded as COMPLEX_WIDTH in check_moment.py, is not determined by ASSEMBLY.json, and is taken from certificates/selected-result.json, consistent with research/selected-suppliers-de-diagnostic. W and n_r come from research/community-frontier1094-audit/ASSEMBLY.json. kappa is 836330098538459/500000000000000000. The enclosure is successive integer square roots. Domain: that assembly's complex profile at this width. No new kappa.",
+  "scope_change_reason": "The card's enclosure method is unchanged. The refinement names the selected assembly, the exponent a = kappa/(1-kappa), and integer-root bounds. Complex width m = 73 is hardcoded, not read out of the assembly. The complex histogram is in the assembly. The bit histogram is not, so the bit moment stays an open obligation.",
   "bottleneck_link": "The selected kappa is the complex supplier's transferred saving. An independent exact bill at that saving checks the pricing claim the frontier uses, and reports the margin, without adopting a new supplier.",
   "budget_minutes": 60,
   "stop_rule": "Stop after the pinned assembly's complex moment sign is certified, the bit profile is recomputed as far as the assembly determines it, and the positive fixture plus the three required failure controls have been run.",
   "outcome": "partial",
   "evidence": "profiles.json certifies a negative complex residual. The margin lies in [1.936096349948151878e-18, 1.936096349948151879e-18] at 36 decimal places. Complex profile m=73, W=14336, rank mass 1041408, deficit 5120. Bit profile recomputed as m=64, W=28416, rank mass 1808352, deficit 10272, with n_r absent and the moment uncertified. Positive fixture passes. Perturbed rank-48 count, a + 1/10^15, and a flipped assembly byte are rejected.",
   "author": "Miley",
-  "ai_assistance": "Substantial assistance from Cursor Grok 4.7. The checker, enclosure, package text and local runs were drafted and executed by the assistant. No independent human mathematical review is claimed.",
+  "ai_assistance": "Substantial assistance from Cursor cloud agent (AI). The checker, enclosure, package text and local runs were drafted and executed by the assistant. No independent human mathematical review is claimed.",
   "coordination": "Discussions 1163 and 1166 were read. No Discussion post, review comment or pull request was opened: the donor forbade those writes. The local task card records that limitation.",
   "overlap": {
     "command": "python3 scripts/find_overlap.py --task independent-moment --refresh",
@@ -59,14 +59,14 @@
     "complete_pagination": true,
     "possible_matches_shown": 20,
     "possible_matches_reported": 57,
-    "conclusion": "No match is this sole-input integer-root check of the selected kappa moment. The nearest packages are research/selected-suppliers-de-diagnostic (endpoint residuals and the D/E screen, with EXPECTED.json as a second input) and research/frontier1094-emitted-ledger-seed78 (complex histogram rebuilt from the emitted program, without this moment enclosure)."
+    "conclusion": "No match is this integer-root check of the selected kappa moment. The nearest packages are research/selected-suppliers-de-diagnostic (endpoint residuals and the D/E screen, with EXPECTED.json as a second input) and research/frontier1094-emitted-ledger-seed78 (complex histogram rebuilt from the emitted program, without this moment enclosure)."
   },
   "open_questions": [
     {
       "question": "What exact margin does the selected kappa give the PR589 bit supplier once its paid histogram is available?",
       "why_it_matters": "The assembly prices both suppliers, and the bit bill keeps a bad-residue surcharge. This package recomputes bit m, W and the deficit, but n_r is not in ASSEMBLY.json, so the bit moment is still unchecked.",
       "first_step": "Pin the nine-stage histogram named by bit_supplier.git_blob_sha1 and run this same integer-root bill, including the surcharge term 32*m*sum(n_r)/10^16 * m^a / W.",
-      "blocked_by": "The histogram lives outside the sole-input assembly. Adding it changes the input domain this package fixed."
+      "blocked_by": "The histogram lives outside ASSEMBLY.json. Adding it changes the input domain this package fixed."
     },
     {
       "question": "Can the complex residual be replaced by an exact rational value at this same a?",

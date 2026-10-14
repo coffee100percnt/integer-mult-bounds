@@ -3,12 +3,18 @@
 **Independent verification of one selected bill. No new κ.** The selected
 record is unchanged.
 
-Contributor: Miley. Substantial assistance from Cursor Grok 4.7. Apache-2.0.
+Contributor: Miley. Substantial assistance from Cursor cloud agent (AI). Apache-2.0.
 Task card: [TASK-CARD.md](TASK-CARD.md). Metadata: [TASK.json](TASK.json).
 
 ## Scope and evidence
 
-The sole external input is
+The complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
+[`check_moment.py`](check_moment.py). It is not determined by `ASSEMBLY.json`.
+It is taken from the selected record
+[`certificates/selected-result.json`](../../certificates/selected-result.json),
+consistent with
+[`research/selected-suppliers-de-diagnostic`](../selected-suppliers-de-diagnostic).
+All other complex profile data (`W`, `n_r`) comes from
 [`research/community-frontier1094-audit/ASSEMBLY.json`](../community-frontier1094-audit/ASSEMBLY.json).
 
 | Pin | Value |
@@ -42,8 +48,8 @@ upper bound. Both comparisons are exact integer comparisons.
 
 ### Recomputed profiles
 
-Complex width `m = 73` is the selected chart width. The histogram and the call
-count do not determine it: three positive-deficit widths satisfy
+Complex width `m = 73` is the hardcoded `COMPLEX_WIDTH`. The histogram and the
+call count do not determine it: three positive-deficit widths satisfy
 `Σ r n_r - 64 N` divisible by `m - 1`. Given `m = 73` and one centre unit of
 rank 64 on each of the `N = 144` gauge44 calls,
 
@@ -132,6 +138,9 @@ bound strictly above 1, and the flipped byte's sha256 differs from the pin.
 - Bootstrap cutoffs, the 47 outer inequalities, and the conservative
   complex-surcharge endpoints stored in the assembly.
 - Any claim that this finite bill is a complete multiplication theorem.
+- Cross-check against `make frontier1094-verify` was not run, because an
+  independent replay on full history fails in the ancestor step of the
+  baseline799 chain (the original run was also still going after 34 min).
 
 ## Open next questions
 
@@ -141,8 +150,8 @@ bound strictly above 1, and the flipped byte's sha256 differs from the pin.
    `m`, `W` and the deficit, but `n_r` is not in `ASSEMBLY.json`, so the bit
    moment is still unchecked. First step: pin the nine-stage histogram named
    by `bit_supplier.git_blob_sha1` and run this same integer-root bill,
-   including the surcharge term. Blocked by the histogram living outside the
-   sole-input file; adding it changes the input domain fixed here.
+   including the surcharge term. Blocked by the histogram living outside
+   `ASSEMBLY.json`. Adding it changes the input domain fixed here.
 
 2. **Can the complex residual be replaced by an exact rational value at this
    same `a`?** The sign and a `10^-36` decimal gap are already certified. An
@@ -163,6 +172,6 @@ directory is new.
 
 ## AI assistance
 
-Substantial assistance from Cursor Grok 4.7. The checker, enclosure, package
+Substantial assistance from Cursor cloud agent (AI). The checker, enclosure, package
 text and local runs were drafted and executed by the assistant. No independent
 human mathematical review is claimed.

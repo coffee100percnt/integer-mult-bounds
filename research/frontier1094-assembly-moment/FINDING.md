@@ -19,18 +19,23 @@ the worktree bytes.
 ## Method
 
 Successive integer square roots (`math.isqrt`, 128 steps, 160-bit dyadic
-roots), then the dyadic bits of the exponent. The sole input is
-`ASSEMBLY.json`. The checker imports nothing from this repository and does
-not copy `scripts/verify_frontier1094.py`,
+roots), then the dyadic bits of the exponent. The checker imports nothing
+from this repository and does not copy `scripts/verify_frontier1094.py`,
 `research/community-batch1099-audit/check_frontier1094.py`, or
 `research/selected-suppliers-de-diagnostic/verify.py`. Acceptance comparisons
 use integers and `fractions.Fraction` only.
 
+The complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
+`research/frontier1094-assembly-moment/check_moment.py`. It is not determined
+by `ASSEMBLY.json`. It is taken from the selected record
+`certificates/selected-result.json`, consistent with
+`research/selected-suppliers-de-diagnostic`. All other complex profile data
+(`W`, `n_r`) comes from `ASSEMBLY.json`.
+
 The exponent is `a = κ/(1−κ)` with
 `κ = 836330098538459/500000000000000000`, so
 `a = 836330098538459/499163669901461541`.
-The complex profile is the assembly histogram at width `m = 73`,
-`W = 14336`, no surcharge. The bill is
+With that width, `W = 14336` and no surcharge. The bill is
 `(1/W) Σ n_r (r/m)^(1−a) < 1`.
 
 ## Complex margin, and the two published values
@@ -71,8 +76,7 @@ bill strictly below 1 (`accept: true` there; negative residual here).
 `13198339462995539973097/19966546796058461640000000000000000000000`
 (about `6.61022×10^−19`). This run does not reproduce
 `−1.304215×10^−24`. A smaller exponent leaves a wider gap under 1, about
-`1.936×10^−18` here. `make frontier1094-verify` was still running when this
-note was written and was not used.
+`1.936×10^−18` here.
 
 ## Controls
 
@@ -94,6 +98,9 @@ note was written and was not used.
 - H1–H5.
 - Hosting.
 - The all-size transfer.
+- Cross-check against `make frontier1094-verify` was not run, because an
+  independent replay on full history fails in the ancestor step of the
+  baseline799 chain (the original run was also still going after 34 min).
 
 ## Existing `independent-moment` packages
 
@@ -131,6 +138,6 @@ from opencode). Those programs were not imported or copied.
 
 ## AI assistance
 
-Contributor: Miley. Substantial assistance from Cursor Grok 4.7. The checker,
-this note, and the local control run were drafted and executed by the
-assistant. No independent human mathematical review is claimed.
+Contributor: Miley. Substantial assistance from Cursor cloud agent (AI). The
+checker, this note, and the local control run were drafted and executed by
+the assistant. No independent human mathematical review is claimed.

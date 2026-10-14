@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Integer-root check of the selected frontier1094 moment.
 
-Sole external input is research/community-frontier1094-audit/ASSEMBLY.json.
+Complex width m = 73 is the hardcoded COMPLEX_WIDTH. It is not determined by
+ASSEMBLY.json. It is taken from certificates/selected-result.json, consistent
+with research/selected-suppliers-de-diagnostic. W and n_r come from
+research/community-frontier1094-audit/ASSEMBLY.json.
 The checker imports nothing from this repository. Acceptance comparisons use
 integers and fractions only.
 

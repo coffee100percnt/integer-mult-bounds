@@ -16,8 +16,7 @@ The same digest was checked against `upstream/main`.
 
 Concrete object and question:
 Selected frontier1094 κ = `836330098538459/500000000000000000`.
-For each supplier, recompute the paid profile `(m, W, n_r)` from that assembly
-alone, then decide the sign of
+For each supplier, recompute the paid profile `(m, W, n_r)`, then decide the sign of
 
 `(1/W) * Σ n_r (r/m)^(1-a) - 1`
 
@@ -32,7 +31,11 @@ The selected assembly's moment claim at the frontier κ. No new κ.
 
 Method; explicit parameter ranges/candidate alphabet:
 Successive integer square roots (128 steps, 160 bits) and the dyadic bits of
-`a`. Complex width `m = 73` with one centre rank-64 unit per call.
+`a`. Complex width `m = 73` is hardcoded as `COMPLEX_WIDTH` in
+`check_moment.py`. It is not determined by `ASSEMBLY.json`. It is taken from
+the selected record `certificates/selected-result.json`, consistent with
+`research/selected-suppliers-de-diagnostic`. One centre rank-64 unit per call.
+`W` and `n_r` come from `ASSEMBLY.json`:
 `W = (Σ r n_r - 64 N) / 72` with `N = provider_counts.gauge44`.
 Bit `m`, `W` and the deficit are parsed from `bit_supplier`.
 
@@ -41,7 +44,7 @@ Nearest overlapping work and why this adds something:
 `a < D/E` screen, and it reads the bit `EXPECTED.json`.
 `research/frontier1094-emitted-ledger-seed78` rebuilds the complex histogram
 from the emitted program. This package does neither: it encloses the selected-κ
-bill from the assembly bytes, with a fresh root chain.
+bill from the assembly histogram at the hardcoded width, with a fresh root chain.
 
 Optimistic full cost budget; required observable improvement:
 No supplier change and no κ gain. The observable is a certified negative
