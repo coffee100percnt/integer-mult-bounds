@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "ready",
+  "python": "3.12",
+  "requirements": [],
+  "inputs": [
+    "research/community-frontier1094-audit/ASSEMBLY.json"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "-B",
+        "{package}/check_moment.py"
+      ],
+      "timeout_seconds": 120,
+      "checks": "Pinned assembly hash, recomputed complex paid profile, integer-root moment at a=kappa/(1-kappa), positive square-root and zero-exponent fixtures"
+    },
+    {
+      "argv": [
+        "{python}",
+        "-B",
+        "{package}/test_controls.py"
+      ],
+      "timeout_seconds": 120,
+      "checks": "Positive fixture and assembly check exit 0; perturbed n_r, larger a, and tampered hash each exit 1"
+    }
+  ]
+}

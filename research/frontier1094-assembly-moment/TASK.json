@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "task_id": "independent-moment",
+  "scope_key": "independent-moment",
+  "catalogue_method_fingerprint": "c191650c0fa8d2fa514e",
+  "priority_revision": 3,
+  "base_commit": "0b1cccf86e2f5132ed286a26ef0a681a495740ea",
+  "original_card": {
+    "id": "independent-moment",
+    "question": "Can one selected pricing or assembly claim be checked by a genuinely independent exact implementation?",
+    "starting_points": [
+      "certificates/selected-result.json"
+    ],
+    "methods": [
+      "Reconstruct the rank ledger from original operations rather than trusting its aggregate.",
+      "Implement certified moment inequalities through a different exact enclosure method."
+    ],
+    "acceptance_gate": "Demonstrate independence, source binding, positive cases and semantic failure controls.",
+    "first_step": {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/research_baseline.py"
+      ],
+      "expected": "PASS_RESEARCH_BASELINE_BINDINGS_ONLY",
+      "inspect": "Record the selected certificate and complex_profile rather than taking a PR headline as input.",
+      "scope": "Positive control / source-bound orientation only; this is not a new construction or full cold replay."
+    },
+    "first_experiment": "Recompute one small part of the ledger or one certified enclosure using an independent implementation.",
+    "bottleneck_link": "Independent pricing prevents unsupported frontier claims and can reveal genuine accounting slack.",
+    "allowed_variations": [
+      "Reconstruct either a source ledger or a numeric enclosure with a different method."
+    ],
+    "scope_change_triggers": [
+      "Importing the primary function and calling its output independent verification."
+    ],
+    "overlap_terms": [
+      "independent moment",
+      "rank histogram",
+      "exact enclosure"
+    ]
+  },
+  "scope_status": "refined",
+  "actual_scope": "Independently enclose the selected frontier1094 moment at a = kappa/(1-kappa) for the paid profile recomputed from research/community-frontier1094-audit/ASSEMBLY.json alone. kappa is 836330098538459/500000000000000000. The enclosure is successive integer square roots. Domain: that assembly only. No new kappa.",
+  "scope_change_reason": "The card's enclosure method is unchanged. The refinement names the selected assembly, the exponent a = kappa/(1-kappa), and integer-root bounds. The complex histogram is in the assembly. The bit histogram is not, so the bit moment stays an open obligation of this sole-input domain.",
+  "bottleneck_link": "The selected kappa is the complex supplier's transferred saving. An independent exact bill at that saving checks the pricing claim the frontier uses, and reports the margin, without adopting a new supplier.",
+  "budget_minutes": 60,
+  "stop_rule": "Stop after the pinned assembly's complex moment sign is certified, the bit profile is recomputed as far as the assembly determines it, and the positive fixture plus the three required failure controls have been run.",
+  "outcome": "partial",
+  "evidence": "profiles.json certifies a negative complex residual. The margin lies in [1.936096349948151878e-18, 1.936096349948151879e-18] at 36 decimal places. Complex profile m=73, W=14336, rank mass 1041408, deficit 5120. Bit profile recomputed as m=64, W=28416, rank mass 1808352, deficit 10272, with n_r absent and the moment uncertified. Positive fixture passes. Perturbed rank-48 count, a + 1/10^15, and a flipped assembly byte are rejected.",
+  "author": "Miley",
+  "ai_assistance": "Substantial assistance from Cursor Grok 4.7. The checker, enclosure, package text and local runs were drafted and executed by the assistant. No independent human mathematical review is claimed.",
+  "coordination": "Discussions 1163 and 1166 were read. No Discussion post, review comment or pull request was opened: the donor forbade those writes. The local task card records that limitation.",
+  "overlap": {
+    "command": "python3 scripts/find_overlap.py --task independent-moment --refresh",
+    "fetched_at": "2026-10-14T13:20:23Z",
+    "open_prs": 541,
+    "discussions": 528,
+    "complete_pagination": true,
+    "possible_matches_shown": 20,
+    "possible_matches_reported": 57,
+    "conclusion": "No match is this sole-input integer-root check of the selected kappa moment. The nearest packages are research/selected-suppliers-de-diagnostic (endpoint residuals and the D/E screen, with EXPECTED.json as a second input) and research/frontier1094-emitted-ledger-seed78 (complex histogram rebuilt from the emitted program, without this moment enclosure)."
+  },
+  "open_questions": [
+    {
+      "question": "What exact margin does the selected kappa give the PR589 bit supplier once its paid histogram is available?",
+      "why_it_matters": "The assembly prices both suppliers, and the bit bill keeps a bad-residue surcharge. This package recomputes bit m, W and the deficit, but n_r is not in ASSEMBLY.json, so the bit moment is still unchecked.",
+      "first_step": "Pin the nine-stage histogram named by bit_supplier.git_blob_sha1 and run this same integer-root bill, including the surcharge term 32*m*sum(n_r)/10^16 * m^a / W.",
+      "blocked_by": "The histogram lives outside the sole-input assembly. Adding it changes the input domain this package fixed."
+    },
+    {
+      "question": "Can the complex residual be replaced by an exact rational value at this same a?",
+      "why_it_matters": "The sign and a 10^-36 decimal gap are already certified. An exact value would remove the dyadic window from the reported margin.",
+      "first_step": "Enclose one rank term a second way, at a higher root-bit count, and compare the two intervals on the rank-48 term.",
+      "blocked_by": "(m/r)^a is not rational for this a. A closed form is not expected; only a tighter enclosure is."
+    }
+  ]
+}
